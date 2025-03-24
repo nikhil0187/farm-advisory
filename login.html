@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login with OTP</title>
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="assets/css/login.css">
+</head>
+
+<header>
+    <div class="logo-title">
+        <img src="assets/images/your-logo.png" alt="Logo" class="logo">
+        <h1 class="title">Krishi Utkarsh</h1>
+    </div>
+    <div class="action-buttons">
+        <a href="register.html" class="button first">Register</a>
+    </div>
+</header>
+
+<body>
+
+    <div class="login-container">
+        <h2>𝐋𝐎𝐆 𝐈𝐍</h2>
+        <form onsubmit="return validateForm(event)">
+            <label for="username">Username:</label>
+            <input type="text" id="username" placeholder="Enter Username">
+
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" placeholder="Enter Phone Number">
+
+            <button type="button" id="sendOtpBtn" onclick="sendOTP()">Send OTP</button>
+
+            <div id="otpSection" style="display: none;">
+                <label for="otp">Enter OTP:</label>
+                <input type="text" id="otp" placeholder="Enter OTP">
+            </div>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter Password">
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <!-- Link JavaScript -->
+    <script src="assets/js/login.js"></script>
+
+</body>
+</html>

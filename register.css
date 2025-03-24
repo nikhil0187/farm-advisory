@@ -1,0 +1,152 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #e24405, #fff675); /* Gradient Background */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: flex-start; /* Align items to the top */
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    position: relative;
+    padding-top: 100px; /* Space for header */
+    overflow: hidden; /* Prevent scrolling on the body */
+}
+
+/* Common Header Styles */
+header {
+    position: fixed; /* Fix header at the top */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    background: rgba(255, 253, 253, 0);
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center header content */
+    border-radius: 1px;
+    animation: fadeIn 1s ease-in-out;
+    font-family: 'Lobster', cursive;
+    font-weight: bold;
+    z-index: 1000; /* Ensure header is above other content */
+}
+
+/* Common Logo and Title */
+.logo-title {
+    display: flex;
+    align-items: center;
+    flex-direction: column; /* Stack logo and title vertically */
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-bottom: 10px; /* Add bottom margin for the logo */
+}
+
+.title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700; /* Apply the Lobster font */
+    font-size: 36px; /* Adjust the font size as needed */
+}
+
+/* Register Container */
+.register-container {
+    background: rgb(237, 237, 237);
+    width: 90%;
+    max-width: 350px; /* Maximum width */
+    padding: 25px;
+    box-shadow: 0px 5px 15px rgb(0, 0, 0);
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    margin-top: 120px; /* Space below header */
+    overflow-y: auto; /* Allow scrolling inside the container */
+    max-height: calc(100vh - 300px); /* Ensure it doesn't cover the full screen */
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+h2, label {
+    font-weight: bold;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+}
+
+textarea {
+    height: 50px;
+    resize: none;
+}
+
+.gender-options {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+button {
+    width: 90%;
+    padding: 20px;
+    background: #2193b0;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    margin-top: 10px;
+    transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+    background: #176881;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    body {
+        padding-top: 120px; /* Adjust space for header */
+    }
+
+    .register-container {
+        width: 90%; /* Make the register container wider on small screens */
+        padding: 20px; /* Adjust padding for smaller screens */
+        margin-top: 70px; /* Ensure space below header */
+    }
+
+    header {
+        flex-direction: column; /* Stack header elements vertically on smaller screens */
+        align-items: center; /* Center the header elements */
+    }
+
+    .logo-title {
+        flex-direction: column; /* Stack logo and title vertically on smaller screens */
+        align-items: center; /* Center the logo and title */
+    }
+    .logo {
+        margin-right: 0; /* Remove right margin for the logo */
+        margin-bottom: 10px; /* Add bottom margin for the logo */
+    }
+
+    .title {
+        font-size: 28px; /* Adjust font size for the title */
+        margin-bottom: 5px
+    }
+
+    input, select, textarea {
+        width: 100%; /* Ensure form elements take full width on small screens */
+    }
+
+    button {
+        width: 100%; /* Ensure button takes full width on small screens */
+    }
+}

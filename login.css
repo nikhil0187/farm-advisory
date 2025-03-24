@@ -1,0 +1,137 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #7b05e2, #ff758c); /* Gradient Background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Common Header Styles */
+header {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    background: rgba(255, 253, 253, 0);
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    border-radius: 1px;
+    animation: fadeIn 1s ease-in-out;
+    font-family: 'Lobster', cursive;
+    font-weight: bold;
+}
+
+/* Common Logo and Title */
+.logo-title {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700; /* Apply the Lobster font */
+    font-size: 46px; /* Adjust the font size as needed */
+}
+
+.login-container {
+    background: rgb(241, 241, 244);
+    width: 350px;
+    padding: 25px;
+    box-shadow: 0px 5px 15px rgb(0,0,255);
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.login-container:hover {
+    transform: scale(1.02);
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    transition: border 0.3s ease-in-out;
+}
+
+input:focus {
+    border: 1px solid #1029d0;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #0f6dc5;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    margin-top: 10px;
+    transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+    background: #ff5274;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+}
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column; /* Stack elements vertically on smaller screens */
+        padding: 20px; /* Add padding for smaller screens */
+    }
+
+    .login-container {
+        width: 90%; /* Make the login container wider on small screens */
+        padding: 20px; /* Adjust padding for smaller screens */
+    }
+
+    header {
+        flex-direction: column; /* Stack header elements vertically on smaller screens */
+        align-items: center; /* Center the header elements */
+    }
+
+    .logo-title {
+        flex-direction: column; /* Stack logo and title vertically on smaller screens */
+        align-items: center; /* Center the logo and title */
+    }
+
+    .logo {
+        margin-right: 0; /* Remove right margin for the logo */
+        margin-bottom: 10px; /* Add bottom margin for the logo */
+    }
+
+    .title {
+        font-size: 36px; /* Adjust font size for the title */
+    }
+
+    input, select, textarea {
+        width: 100%; /* Ensure form elements take full width on small screens */
+    }
+
+    button {
+        width: 100%; /* Ensure button takes full width on small screens */
+    }
+}

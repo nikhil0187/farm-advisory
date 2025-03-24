@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: url('assets/image/cropsbg.png') no-repeat center center fixed; /* Background image */
+    background-size: cover;
+    height: 100vh; /* Ensure it covers the full viewport height */
+    overflow: auto; /* Allow scrolling */
+    position: relative;
+}
+
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/cropsbg.png'); /* Correct path */
+    background-size: cover;
+    background-position: center;
+    filter: blur(3px); /* Optional blur effect */
+    z-index: -1; /* Ensure it stays behind other content */
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    filter: blur(5px); /* Apply blur effect */
+    -webkit-filter: blur(5px); /* For Safari */
+    z-index: -1; /* Ensure it stays behind other content */
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+
+.irrigation-column {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    width: 300px;
+    margin: 10px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    max-height: 90vh;
+}
+
+.irrigation-column h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.technique {
+    margin-bottom: 30px;
+}
+
+.technique img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.technique p {
+    line-height: 1.6;
+}
+
+.technique b {
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .irrigation-column {
+        width: 90%;
+        margin: 10px auto;
+    }
+}

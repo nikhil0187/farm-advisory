@@ -1,0 +1,348 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: url('assets/image/cropsbg.png') no-repeat center center fixed; /* Background image */
+    background-size: cover;
+    height: 100vh; /* Ensure it covers the full viewport height */
+    overflow: auto; /* Allow scrolling */
+    position: relative;
+}
+
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/cropsbg.png'); /* Correct path */
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px); /* Optional blur effect */
+    z-index: -1; /* Ensure it stays behind other content */
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    filter: blur(5px); /* Apply blur effect */
+    -webkit-filter: blur(5px); /* For Safari */
+    z-index: -1; /* Ensure it stays behind other content */
+}
+
+/* Header */
+header {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    background: rgba(75, 73, 73, 0.427);
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    animation: fadeIn 1s ease-in-out;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+/* Common Logo and Title */
+.logo-title {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700; /* Apply the Lobster font */
+    font-size: 46px; /* Adjust the font size as needed */
+}
+
+/* Common Footer Styles */
+
+
+/* Search Bar */
+.search-container {
+    padding: 20px;
+    text-align: center;
+}
+
+.search-bar {
+    background-color: rgba(129, 124, 124, 0.348);
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 20px;
+    padding: 10px 20px;
+    width: 80%;
+    max-width: 600px;
+    color: white;
+    font-size: 16px;
+}
+
+.search-bar::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Query Boxes */
+.query-box {
+    background-color: rgba(94, 94, 94, 0.621);
+    border: 3px solid rgb(255, 255, 255);
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 80%;
+    box-sizing: border-box;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 1s ease, transform 1s ease;
+    text-align: left;
+    cursor: pointer;
+    display: block;
+}
+
+.query-box.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.query-box img {
+    max-width: 20%;
+    height: auto;
+    margin-top: 10px;
+}
+
+.query-box a {
+    color: rgba(9, 36, 240, 0.916);
+    display: block;
+    margin-top: 10px;
+}
+
+.query-box .query {
+    font-weight: bold;
+}
+
+.query-box .solution {
+    font-weight: normal;
+}
+ .fz img{
+    margin-left: 250px;
+} 
+
+/* Slide Buttons */
+.slide-button {
+    background-color: rgba(50, 50, 50, 0.8);
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 80%;
+    box-sizing: border-box;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 1s ease, transform 1s ease;
+    text-align: left;
+    cursor: pointer; 
+    background-color: rgba(87, 85, 85, 0.559);
+    border: 3px solid rgb(255, 255, 255);
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 80%;
+    box-sizing: border-box;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 1s ease, transform 1s ease;
+    text-align: left;
+    cursor: pointer;
+    display: block;
+}
+
+.slide-button.active {
+opacity: 1;
+transform: translateX(0);
+}
+
+.slide-button  img {
+max-width: 20%;
+height: auto;
+margin-top: 10px;
+}
+
+.slide-button  a {
+color: rgba(9, 36, 240, 0.916);
+display: block;
+margin-top: 10px;
+}
+
+.slide-button .query {
+font-weight: bold;
+}
+
+.slide-button  .solution {
+font-weight: normal;
+}
+
+
+/* .slide-button.active {
+    opacity: 1;
+    transform: translateX(0);
+} */
+
+/* Chat Button */
+.chat-button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 20px auto;
+    cursor: pointer;
+    border-radius: 10px;
+    display: block;
+}
+
+/* Filter Buttons */
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+    flex-wrap: wrap;
+}
+
+.filter-buttons button {
+    background-color: rgba(50, 50, 50, 0.8);
+    border: 1px solid white;
+    color: white;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.filter-buttons button.active-filter {
+    background-color: #4CAF50; /* Example active filter color */
+    color: white;
+}
+
+footer {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    background: rgba(115, 115, 116, 0.6);
+    text-align: center;
+    padding: 15px;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards 1.2s;
+    font-family: 'Montserrat', sans-serif; /* Keep the Montserrat font for the footer */
+ }
+
+footer img {
+    width: 25px;
+    margin: 0 10px;
+}
+
+/* Animations */
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Apply animation */
+.query-box:nth-child(odd) {
+    animation: slideInLeft 1s ease-in-out forwards;
+}
+
+.query-box:nth-child(even) {
+    animation: slideInRight 1s ease-in-out forwards;
+}
+
+/* Ensure elements remain visible */
+.query-box, .slide-button {
+    display: block;
+}
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    body {
+        padding-top: 120px; /* Ensure space for the fixed header */
+    }
+
+    header {
+        flex-direction: row; /* Align header elements in a line */
+        justify-content: center; /* Center the header elements */
+        align-items: center; /* Center the header elements vertically */
+    }
+
+    .logo-title {
+        flex-direction: row; /* Align logo and title in a line */
+        align-items: center; /* Center the logo and title */
+        margin-right: 0; /* Remove right margin */
+    }
+
+    .logo {
+        margin-right: 10px; /* Add right margin for the logo */
+        margin-bottom: 0; /* Remove bottom margin for the logo */
+    }
+
+    .title {
+        font-size: 28px; /* Adjust font size for the title */
+    }
+
+    .search-container {
+        width: 90%; /* Make the search container wider on small screens */
+        padding: 10px; /* Adjust padding for smaller screens */
+        margin-top: 20px; /* Add margin to avoid overlap */
+    }
+
+    .search-bar {
+        width: 100%; /* Make the search bar take full width on small screens */
+    }
+
+    .filter-buttons {
+        width: 90%; /* Make the filter buttons container wider on small screens */
+        margin-top: 10px; /* Add margin to avoid overlap */
+    }
+
+    .query-box, .slide-button {
+        width: 90%; /* Make query boxes and slide buttons wider on small screens */
+        margin: 20px auto; /* Center the query boxes and slide buttons */
+    }
+
+    footer {
+        padding: 10px; /* Adjust padding for the footer */
+    }
+
+    footer img {
+        width: 20px; /* Adjust icon size in the footer */
+        margin: 5px; /* Adjust margin for the icons */
+    }
+}

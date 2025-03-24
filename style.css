@@ -1,0 +1,235 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Common Background Image */
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/background.jpg'); /* Correct path */
+    background-size: cover;
+    background-position: center;
+    filter: blur(3px); /* Optional blur effect */
+    z-index: -1; /* Ensure it stays behind other content */
+}
+
+/* Common Body Styles */
+body {
+    min-height: 100vh;
+    color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+    position: relative;
+    padding-bottom: 100px; /* Space for footer */
+}
+
+/* Common Header Styles */
+header .logo-title {
+    left: 20px;
+    background: rgba(18, 0, 0, 0);
+    display: flex;
+    align-items: center;
+    border-radius: 1px;
+    animation: fadeIn 1s ease-in-out;
+    font-family: 'Lobster', cursive;
+    font-weight: bold;
+}
+
+/* Common Logo and Title */
+.logo-title {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700; /* Apply the Lobster font */
+    font-size: 46px; /* Adjust the font size as needed */
+}
+
+/* Common Footer Styles */
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(115, 115, 116, 0.6);
+    text-align: center;
+    padding: 15px;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards 1.2s;
+    font-family: 'Montserrat', sans-serif; /* Keep the Montserrat font for the footer */
+}
+
+footer img {
+    width: 25px;
+    margin: 0 10px;
+}
+
+/* Common Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Homepage-Specific Styles */
+.description {
+    width: 50%;
+    padding: 40px;
+    background: rgba(121, 118, 118, 0.54);
+    border-radius: 10px;
+    border: 1px solid white;
+    box-shadow: 0px 0px 10px rgba(153, 151, 151, 0.111);
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s ease-in-out forwards 0.5s;
+}
+
+.description .intro {
+    font-family: 'Roboto', sans-serif; /* Apply the Roboto font */
+    font-size: 26px; /* Adjust the font size as needed */
+    font-weight: 900;
+}
+
+.description .main-paragraph {
+    font-family: 'Roboto', sans-serif; /* Apply the Roboto font */
+    font-size: 18px; /* Adjust the font size as needed */
+    font-weight: 500; /* Light */
+}
+
+.description .outro {
+    font-family: 'Pacifico', cursive; /* Apply the Pacifico font */
+    font-size: 24px; /* Adjust the font size as needed */
+}
+
+.action-buttons {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s ease-in-out forwards 0.7s;
+}
+
+.action-buttons .button {
+    position: left;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 20px;
+    margin: 40px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+    opacity: 0;
+    text-decoration: none;
+    color: white;
+}
+
+.action-buttons .button.first {
+    background-color: #0073ff;
+    color: rgb(244, 239, 239);
+    animation: slideInLeft 1s ease-in-out forwards 1s;
+}
+
+.action-buttons .button.last {
+    background-color: #0073ff;
+    color: rgb(255, 255, 255);
+    animation: slideInRight 1s ease-in-out forwards 1s;
+}
+
+.action-buttons .button:hover {
+    opacity: 0.8;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    .description {
+        width: 90%; /* Make the description section wider on small screens */
+        padding: 20px; /* Adjust padding for smaller screens */
+    }
+
+    .action-buttons {
+        flex-direction: column; /* Stack buttons vertically on smaller screens */
+        align-items: center; /* Center the buttons */
+    }
+
+    .action-buttons .button {
+        width: 80%; /* Make buttons wider on small screens */
+        margin: 10px 0; /* Adjust margin for smaller screens */
+    }
+
+    header .logo-title {
+        flex-direction: column; /* Stack logo and title vertically on smaller screens */
+        align-items: center; /* Center the logo and title */
+    }
+
+    .logo {
+        margin-right: 0; /* Remove right margin for the logo */
+        margin-bottom: 10px; /* Add bottom margin for the logo */
+    }
+
+    .title {
+        font-size: 36px; /* Adjust font size for the title */
+    }
+
+    footer {
+        padding: 10px; /* Adjust padding for the footer */
+    }
+
+    footer img {
+        width: 20px; /* Adjust icon size in the footer */
+        margin: 5px; /* Adjust margin for the icons */
+    }
+}

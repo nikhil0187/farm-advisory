@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Registration</title>
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="assets/css/register.css">
+</head>
+
+<header>
+    <div class="logo-title">
+        <img src="assets/images/your-logo.png" alt="Logo" class="logo">
+        <h1 class="title">Krishi Utkarsh</h1>
+    </div>
+    <div class="action-buttons">
+        <a href="login.html" class="button last">Log In</a>
+    </div>
+</header>
+
+<body>
+
+    <div class="register-container">
+        <h2>Farmer Registration</h2>
+        <form onsubmit="return validateForm(event)">
+            
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" placeholder="Enter your name">
+
+            <label for="state">State:</label>
+            <select id="state" onchange="populateDistricts()">
+                <option value="">Select State</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                <option value="Assam">Assam</option>
+                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                <option value="Bihar">Bihar</option>
+                <option value="Haryana">Haryana</option>
+                <option value="Manipur">Manipur</option>
+                <option value="Nagaland">Nagaland</option>
+                <option value="Himachal Pradesh">Himachal Pradesh</option>
+                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                <option value="Mizoram">Mizoram</option>
+                <option value="Tripura">Tripura</option>
+                <option value="Jharkhand">Jharkhand</option>
+                <option value="West Bengal">West Bengal</option>
+                <option value="Odisha">Odisha</option>
+                <option value="Rajasthan">Rajasthan</option>
+                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                <option value="Jammu Kashmir">Jammu Kashmir</option>
+                <option value="Gujrat">Gujrat</option>
+                <option value="Telangana">Telangana</option>
+                <option value="Tamil Nadu">Tamil Nadu</option>
+                <option value="Kerala">Kerala</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Chhatisgarh">Chhatisgarh</option>
+                <option value="Uttarakhand">Uttarakhand</option>
+                <option value="Sikkim">Sikkim</option>
+                <option value="Goa">Goa</option>
+                <!-- Add more states -->
+            </select>
+
+            <label for="district">District:</label>
+            <input type="text" id="district" placeholder="Enter your district">
+            
+            <label for="village">Village:</label>
+            <input type="text" id="village" placeholder="Enter your village">            
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" placeholder="Enter your age">
+
+            <label>Gender:</label>
+            <div class="gender-options">
+                <input type="radio" id="male" name="gender" value="Male">
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="Female">
+                <label for="female">Female</label>
+            </div>
+
+            <label for="experience">Farming Experience:</label>
+            <textarea id="experience" placeholder="Describe your farming experience in detail..."></textarea>            
+
+            <label for="crops">Crops Prefer You Most:</label>
+            <textarea id="crops" placeholder="Enter your favorite crops"></textarea>
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+    <!-- Link JavaScript -->
+    <script src="assets/js/register.js"></script>
+
+</body>
+</html>
