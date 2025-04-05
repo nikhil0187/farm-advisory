@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krishi Connect: Share, Connect, Grow</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f0; /* Light off-white */
+            color: #333;
+            line-height: 1.6;
+            overflow-y: scroll; /* Ensure scrollbar for consistent layout */
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e0e0e0;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            color: #388E3C; /* Earthy Green */
+            margin-bottom: 5px;
+        }
+
+        header p {
+            color: #777;
+            font-style: italic;
+        }
+
+        /* Farmer Feed Section */
+        #farmer-feed h2, #job-board h2 {
+            color: #FFC107; /* Warmer Golden Yellow */
+            border-bottom: 2px solid #FFC107;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .post {
+            background-color: #f9f9f9;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 15px;
+            opacity: 0;
+            transform: translateY(10px);
+            animation: fadeInSlideUp 0.5s ease-out forwards;
+            overflow: hidden; /* For video player overflow */
+        }
+
+        @keyframes fadeInSlideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .post-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .profile-pic {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 10px;
+            background-color: #ddd; /* Placeholder */
+        }
+
+        .profile-info strong {
+            color: #333;
+        }
+
+        .profile-info span {
+            color: #777;
+            font-size: 0.9em;
+        }
+
+        .post-content p {
+            margin-bottom: 10px;
+            color: #444;
+        }
+
+        .video-placeholder {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            background-color: #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .video-placeholder::before {
+            content: "\25BA"; /* Play icon */
+            font-size: 2em;
+            color: #555;
+            position: absolute;
+        }
+
+        .post-actions {
+            display: flex;
+            gap: 15px;
+            color: #777;
+            font-size: 0.9em;
+            padding-top: 10px;
+            border-top: 1px solid #eee;
+        }
+
+        .post-actions span {
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .post-actions span:hover {
+            color: #388E3C;
+        }
+
+        /* Job Board Section */
+        .job-listing {
+            background-color: #f9f9f9;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 15px;
+            opacity: 0;
+            transform: translateX(-10px);
+            animation: fadeInSlideLeft 0.5s ease-out forwards;
+            overflow: hidden;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        @keyframes fadeInSlideLeft {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .job-info strong {
+            color: #388E3C;
+        }
+
+        .job-info p {
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        .job-actions button {
+            background-color: #FFC107;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 8px 15px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: background-color 0.3s ease;
+        }
+
+        .job-actions button:hover {
+            background-color: #F57C00;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px;
+                padding: 15px;
+            }
+
+            .job-listing {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .job-actions {
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Krishi Connect</h1>
+            <p>Share, Connect, Grow Together</p>
+        </header>
+
+        <section id="farmer-feed">
+            <h2>Farmer Interactions</h2>
+            <div class="post">
+                <div class="post-header">
+                    <img src="https://via.placeholder.com/40/27ae60/fff?Text=Farmer1" alt="Profile" class="profile-pic">
+                    <div class="profile-info">
+                        <strong>Kisan Singh</strong><br>
+                        <span>Village: Haripur, Haryana</span>
+                    </div>
+                </div>
+                <div class="post-content">
+                    <p>Hello farmers! Just finished harvesting my wheat crop. The yield was good this season thanks to timely rains. How was your harvest?</p>
+                </div>
+                <div class="post-actions">
+                    <span><i class="fa fa-heart"></i> Like</span>
+                    <span><i class="fa fa-comment"></i> Comment</span>
+                    <span><i class="fa fa-share"></i> Share</span>
+                </div>
+            </div>
+
+           
+            <div class="post">
+                <div class="post-header">
+                    <img src="https://via.placeholder.com/40/27ae60/fff?Text=Farmer1" alt="Profile" class="profile-pic">
+                    <div class="profile-info">
+                        <strong>Kisan Singh</strong><br>
+                        <span>Village: Haripur, Haryana</span>
+                    </div>
+                </div>
+                <div class="post-content">
+                    <p>Hello farmers! Just finished harvesting my wheat crop. The yield was good this season thanks to timely rains. How was your harvest?</p>
+                </div>
+                <div class="post-actions">
+                    <span><i class="fa fa-heart"></i> Like</span>
+                    <span><i class="fa fa-comment"></i> Comment</span>
+                    <span><i class="fa fa-share"></i> Share</span>
+                </div>
+            </div>
+
+           
+            <div class="post">
+                <div class="post-header">
+                    <img src="https://via.placeholder.com/40/27ae60/fff?Text=Farmer1" alt="Profile" class="profile-pic">
+                    <div class="profile-info">
+                        <strong>Kisan Singh</strong><br>
+                        <span>Village: Haripur, Haryana</span>
+                    </div>
+                </div>
+                <div class="post-content">
+                    <p>Hello farmers! Just finished harvesting my wheat crop. The yield was good this season thanks to timely rains. How was your harvest?</p>
+                </div>
+                <div class="post-actions">
+                    <span><i class="fa fa-heart"></i> Like</span>
+                    <span><i class="fa fa-comment"></i> Comment</span>
+                    <span><i class="fa fa-share"></i> Share</span>
+                </div>
+            </div>
+
+            <div class="post">
+                <div class="post-header"> 
+                    <img src="https://via.placeholder.com/40/f39c12/fff?Text=Farmer2" alt="Profile" class="profile-pic">
+                    <div class="profile-info">
+                        <strong>Gowriamma</strong><br>
+                        <span>District: Wayanad, Kerala</span>
+                    </div>
+                </div>
+                <div class="post-content">
+                    <p>Facing some issues with pest infestation in my paddy fields. Any organic solutions that you all recommend?</p>
+                    <div class="video-placeholder"></div>
+                    <p class="caption">Check out this video on natural pest control methods.</p>
+                </div>
+                <div class="post-actions">
+                    <span><i class="fa fa-heart"></i> Like</span>
+                    <span><i class="fa fa-comment"></i> Comment</span>
+                    <span><i class="fa fa-share"></i> Share</span>
+                </div>
+            </div>
+
+            <div class="post">
+                <div class="post-header"> 
+                    <img src="https://via.placeholder.com/40/f39c12/fff?Text=Farmer2" alt="Profile" class="profile-pic">
+                    <div class="profile-info">
+                        <strong>Gowriamma</strong><br>
+                        <span>District: Wayanad, Kerala</span>
+                    </div>
+                </div>
+                <div class="post-content">
+                    <p>Facing some issues with pest infestation in my paddy fields. Any organic solutions that you all recommend?</p>
+                    <div class="video-placeholder"></div>
+                    <p class="caption">Check out this video on natural pest control methods.</p>
+                </div>
+                <div class="post-actions">
+                    <span><i class="fa fa-heart"></i> Like</span>
+                    <span><i class="fa fa-comment"></i> Comment</span>
+                    <span><i class="fa fa-share"></i> Share</span>
+                </div>
+            </div>
+
+            <div class="post">
+                <div class="post-header"> 
+                    <img src="https://via.placeholder.com/40/f39c12/fff?Text=Farmer2" alt="Profile" class="profile-pic">
+                    <div class="profile-info">
+                        <strong>Gowriamma</strong><br>
+                        <span>District: Wayanad, Kerala</span>
+                    </div>
+                </div>
+                <div class="post-content">
+                    <p>Facing some issues with pest infestation in my paddy fields. Any organic solutions that you all recommend?</p>
+                    <div class="video-placeholder"></div>
+                    <p class="caption">Check out this video on natural pest control methods.</p>
+                </div>
+                <div class="post-actions">
+                    <span><i class="fa fa-heart"></i> Like</span>
+                    <span><i class="fa fa-comment"></i> Comment</span>
+                    <span><i class="fa fa-share"></i> Share</span>
+                </div>
+            </div>
+
+            <div class="post">
+                <div class="post-header">
+                    <img src="https://via.placeholder.com/40/27ae60/fff?Text=Farmer1" alt="Profile" class="profile-pic">
+                    <div class="profile-info">
+                        <strong>Kisan Singh</strong><br>
+                        <span>Village: Haripur, Haryana</span>
+                    </div>
+                </div>
+                <div class="post-content">
+                    <p>Hello farmers! Just finished harvesting my wheat crop. The yield was good this season thanks to timely rains. How was your harvest?</p>
+                </div>
+                <div class="post-actions">
+                    <span><i class="fa fa-heart"></i> Like</span>
+                    <span><i class="fa fa-comment"></i> Comment</span>
+                    <span><i class="fa fa-share"></i> Share</span>
+                </div>
+            </div>
+
+            <div class="post">
+                <div class="post-header"> 
+                    <img src="https://via.placeholder.com/40/f39c12/fff?Text=Farmer2" alt="Profile" class="profile-pic">
+                    <div class="profile-info">
+                        <strong>Gowriamma</strong><br>
+                        <span>District: Wayanad, Kerala</span>
+                    </div>
+                </div>
+                <div class="post-content">
+                    <p>Facing some issues with pest infestation in my paddy fields. Any organic solutions that you all recommend?</p>
+                    <div class="video-placeholder"></div>
+                    <p class="caption">Check out this video on natural pest control methods.</p>
+                </div>
+                <div class="post-actions">
+                    <span><i class="fa fa-heart"></i> Like</span>
+                    <span><i class="fa fa-comment"></i> Comment</span>
+                    <span><i class="fa fa-share"></i> Share</span>
+                </div>
+            </div>
+
+            <div class="post">
+                <div class="post-header">
+                    <img src="https://via.placeholder.com/40/3498db/fff?Text=Farmer3" alt="Profile" class="profile-pic">
+                    <div class="profile-info">
+                        <strong>Ramesh Patel</strong><br>
+                        <span>State: Gujarat</span>
+                    </div>
+                </div>
+                <div class="post-content">
+                    <p>Thinking of switching to drip irrigation. Any farmers here with experience in setting it up and its benefits?</p>
+                </div>
+                <div class="post-actions">
+                    <span><i class="fa fa-heart"></i> Like</span>
+                    <span><i class="fa fa-comment"></i> Comment</span>
+                    <span><i class="fa fa-share"></i> Share</span>
+                </div>
+            </div>
+            </section>
+
+        <section id="job-board">
+            <h2>Local Job Opportunities & Labor Hiring</h2>
+            <div class="job-listing">
+                <div class="job-info">
+                    <strong>Looking for Farm Laborers</strong>
+                    <p>Farmer: Sohan Lal, Village: Raipur, Punjab</p>
+                    <p>Need 3 laborers for harvesting wheat for the next 10 days. Experience preferred. Contact via email: sohan.lal@email.com or phone: 9876543210.</p>
+                </div>
+                <div class="job-actions">
+                    <button onclick="alert('Simulating contact with farmer.')">Contact Farmer</button>
+                </div>
+            </div>
+
+            <div class="job-listing">
+                <div class="job-info">
+                    <strong>Seeking Part-Time Work on Farm</strong>
+                    <p>Name: Lakshmi Devi, Village: Kishanpur, Uttar Pradesh</p>
+                    <p>Experienced in sowing, weeding, and harvesting. Available for part-time work in nearby farms. Contact: lakshmi.devi@email.com.</p>
+                </div>
+                <div class="job-actions">
+                    <button onclick="alert('Simulating contact with job seeker.')">Contact Job Seeker</button>
+                </div>
+            </div>
+
+            <div class="job-listing">
+                <div class="job-info">
+                    <strong>Seeking Part-Time Work on Farm</strong>
+                    <p>Name: Lakshmi Devi, Village: Kishanpur, Uttar Pradesh</p>
+                    <p>Experienced in sowing, weeding, and harvesting. Available for part-time work in nearby farms. Contact: lakshmi.devi@email.com.</p>
+                </div>
+                <div class="job-actions">
+                    <button onclick="alert('Simulating contact with job seeker.')">Contact Job Seeker</button>
+                </div>
+            </div>
+
+            <div class="job-listing">
+                <div class="job-info">
+                    <strong>Seeking Part-Time Work on Farm</strong>
+                    <p>Name: Lakshmi Devi, Village: Kishanpur, Uttar Pradesh</p>
+                    <p>Experienced in sowing, weeding, and harvesting. Available for part-time work in nearby farms. Contact: lakshmi.devi@email.com.</p>
+                </div>
+                <div class="job-actions">
+                    <button onclick="alert('Simulating contact with job seeker.')">Contact Job Seeker</button>
+                </div>
+            </div>
+
+            <div class="job-listing">
+                <div class="job-info">
+                    <strong>Hiring Tractor Driver</strong>
+                    <p>Farmer: Arvind Kumar, District: Nalanda, Bihar</p>
+                    <p>Looking for an experienced tractor driver for plowing and cultivation work. Full-time position. Contact: arvind.k@phone.net.</p>
+                </div>
+                <div class="job-actions">
+                    <button onclick="alert('Simulating contact with farmer.')">Contact Farmer</button>
+                </div>
+            </div>
+            </section>
+    </div>
+
+    <script>
+        // Font Awesome for icons (you might need to include the library separately for real icons)
+        const fontAwesomeLink = document.createElement('link');
+        fontAwesomeLink.rel = 'stylesheet';
+        fontAwesomeLink.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css';
+        document.head.appendChild(fontAwesomeLink);
+
+        // Simple animation on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const posts = document.querySelectorAll('#farmer-feed .post');
+            posts.forEach((post, index) => {
+                setTimeout(() => {
+                    post.style.animationDelay = `${index * 0.2}s`;
+                }, 100);
+            });
+
+            const jobs = document.querySelectorAll('#job-board .job-listing');
+            jobs.forEach((job, index) => {
+                setTimeout(() => {
+                    job.style.animationDelay = `${index * 0.15}s`;
+                }, 200);
+            });
+        });
+
+        // Simulate video play
+        document.querySelectorAll('.video-placeholder').forEach(placeholder => {
+            placeholder.addEventListener('click', () => {
+                placeholder.innerHTML = '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+            });
+        });
+    </script>
+</body>
+</html>
