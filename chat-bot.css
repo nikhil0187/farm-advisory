@@ -12,7 +12,7 @@ body{
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: linear-gradient(#EEEEFF,#08b7da);
+    background: linear-gradient(#388E3C,#ffffff);
 }
 .chatbot-popup{
     position: relative;
