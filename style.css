@@ -1,25 +1,21 @@
-/* Reset default styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Common Background Image */
 .background-image {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('background(2).jpg'); /* Correct path */
+    background-image: url('background (2).jpg'); /* Correct path */
     background-size: cover;
     background-position: center;
     filter: blur(3px); /* Optional blur effect */
     z-index: -1; /* Ensure it stays behind other content */
 }
-
-/* Common Body Styles */
 body {
     min-height: 100vh;
     color: rgb(0, 0, 0);
@@ -34,8 +30,6 @@ body {
     padding-bottom: 100px; /* Space for footer */
     box-shadow: whitesmoke;
 }
-
-/* Common Header Styles */
 header .logo-title {
     left: 20px;
     background: rgba(18, 0, 0, 0);
@@ -47,7 +41,6 @@ header .logo-title {
     font-weight: bold;
 }
 
-/* Common Logo and Title */
 .logo-title {
     display: flex;
     align-items: center;
@@ -63,10 +56,10 @@ header .logo-title {
 .title {
     font-family: 'Poppins', sans-serif;
     font-weight: 700; /* Apply the Lobster font */
-    font-size: 46px; /* Adjust the font size as needed */
+    font-size: 46px; 
 }
 
-/* Common Footer Styles */
+
 footer {
     position: absolute;
     bottom: 0;
