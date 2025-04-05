@@ -80,7 +80,7 @@
             border-radius: 50%;
             object-fit: cover;
             margin-right: 10px;
-            background-color: #ddd; /* Placeholder */
+            background-color: #ddd; 
         }
 
         .profile-info strong {
@@ -98,22 +98,25 @@
         }
 
         .video-placeholder {
-            position: relative;
-            width: 100%;
-            height: 0;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-            background-color: #ddd;
-            border-radius: 4px;
-            overflow: hidden;
-            margin-bottom: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-        }
+    position: relative;
+    width: 100%; 
+    padding-bottom: 56.25%;
+    background-color: #ddd; 
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.video-placeholder video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    border-radius: 4px;
 
         .video-placeholder::before {
-            content: "\25BA"; /* Play icon */
+            content: "\25BA"; 
             font-size: 2em;
             color: #555;
             position: absolute;
@@ -275,9 +278,14 @@
                         <span>District: Wayanad, Kerala</span>
                     </div>
                 </div>
-                <div class="post-content">
+                  <div class="post-content">
                     <p>Facing some issues with pest infestation in my paddy fields. Any organic solutions that you all recommend?</p>
-                    <div class="video-placeholder"></div>
+                    <div class="video-placeholder">
+                        <video controls preload="auto" width="100%" height="auto">
+                            <source src="Krishi utkarsh.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
                     <p class="caption">Check out this video on natural pest control methods.</p>
                 </div>
                 <div class="post-actions">
@@ -295,9 +303,14 @@
                         <span>District: Wayanad, Maharastra</span>
                     </div>
                 </div>
-                <div class="post-content">
+                  <div class="post-content">
                     <p>Facing some issues with pest infestation in my paddy fields. Any organic solutions that you all recommend?</p>
-                    <div class="video-placeholder"></div>
+                    <div class="video-placeholder">
+                        <video controls preload="auto" width="100%" height="auto">
+                            <source src="Krishi utkarsh.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
                     <p class="caption">Check out this video on natural pest control methods.</p>
                 </div>
                 <div class="post-actions">
@@ -315,9 +328,14 @@
                         <span>District: Darbhanga,Bihar</span>
                     </div>
                 </div>
-                <div class="post-content">
-                    <p>Facing some issues with pest infestation in my fields. Any of them can recommend me?</p>
-                    <div class="video-placeholder"></div>
+                   <div class="post-content">
+                    <p>Facing some issues with pest infestation in my paddy fields. Any organic solutions that you all recommend?</p>
+                    <div class="video-placeholder">
+                        <video controls preload="auto" width="100%" height="auto">
+                            <source src="Krishi utkarsh.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
                     <p class="caption">Check out this video on natural pest control methods.</p>
                 </div>
                 <div class="post-actions">
@@ -353,9 +371,14 @@
                         <span>District: Rohtas,Bihar</span>
                     </div>
                 </div>
-                <div class="post-content">
+                  <div class="post-content">
                     <p>Facing some issues with pest infestation in my paddy fields. Any organic solutions that you all recommend?</p>
-                    <div class="video-placeholder"></div>
+                    <div class="video-placeholder">
+                        <video controls preload="auto" width="100%" height="auto">
+                            <source src="Krishi utkarsh.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
                     <p class="caption">Check out this video on natural pest control methods.</p>
                 </div>
                 <div class="post-actions">
