@@ -1,0 +1,333 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: url('../images/cropsbg1.png') no-repeat center center fixed; /* Background image */
+    background-size: cover;
+    height: 100vh; /* Full viewport height */
+    overflow: auto; /* Allow scrolling */
+    position: relative;
+}
+
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/cropsbg1.png'); /* Correct path */
+    background-size: cover;
+    background-position: center;
+    filter: blur(3px); /* Optional blur effect */
+    z-index: -1; /* Ensure it stays behind other content */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.notification {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 600px;
+    padding: 15px;
+    margin: 10px auto;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    color: #000000;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+}
+
+/* Heatwave Alert Styling */
+.heatwave {
+    background: #28a746; /* Red color for extreme heat alert */
+    border-radius: 20 ;
+}
+
+/* Icon Style */
+.icon {
+    font-size: 20px;
+    margin-right: 10px;
+}
+.title2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Crop Card Container */
+.crop-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Individual Crop Card */
+.crop-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 200px;
+    transition: 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.crop-card:hover {
+    transform: scale(1.05);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Crop Name Styling */
+.crop-card h3 {
+    margin-bottom: 10px;
+    color: #28a745;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .crop-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+/* Close Button */
+.close-btn {
+    font-size: 18px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 50%;
+    transition: 0.3s ease-in-out;
+}
+
+.close-btn:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+/* .query-box.active {
+    opacity: 1;
+    transform: translateX(0);
+} */
+
+
+/* Header */
+header {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    background: rgba(141, 141, 141, 0.427);
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    animation: fadeIn 1s ease-in-out;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+/* Common Logo and Title */
+.logo-title {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700; /* Apply the Lobster font */
+    font-size: 46px; /* Adjust the font size as needed */
+}
+
+/* Section Styles */
+section {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #4CAF50;
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+/* Alerts Section */
+/* Real-Time Alerts Section */
+#alerts {
+    text-align: center;
+    margin-top: 170px;
+    max-height: 500px; /* Limit the height to show only three notifications */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.9); /* Light background for better visibility */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for individual notifications */
+.notification {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(202, 202, 202, 0.53);
+    font-size: 1rem;
+    color: #333;
+    background-color: #ffe0b2; /* Light orange background for notifications */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Add hover effect for notifications */
+.notification:hover {
+    transform: scale(1.05);
+    background-color: #ffd28f; /* Slightly darker orange on hover */
+}
+
+/* Scrollbar styling (optional, for better appearance) */
+#alerts::-webkit-scrollbar {
+    width: 8px;
+}
+
+#alerts::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 10px;
+}
+
+#alerts::-webkit-scrollbar-thumb:hover {
+    background-color: #aaa;
+}
+
+
+
+/* Market Insights Section */
+#market {
+    text-align: center;
+}
+
+#product-graphs canvas {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+#product-demand-graph,
+#market-trend-graph {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#product-demand-graph canvas,
+#market-trend-graph canvas {
+    max-width: 100%;
+    height: 400px;
+    margin: 0 auto;
+}
+
+#marketplace,
+#price-tables {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Policy Updates Section */
+#policy-list div {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    font-size: 1rem;
+}
+
+/* Style for individual notifications */
+.notification {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(202, 202, 202, 0.478);
+    font-size: 1rem;
+    color: #333;
+    background-color: #ffe0b2; /* Light orange background for notifications */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Alert Settings Modal */
+/*#alert-settings-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: table-footer-group;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.close-modal {
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+    color: #ff0000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .modal-content {
+        width: 90%;
+    }
+
+    #product-demand-graph canvas,
+    #market-trend-graph canvas {
+        height: 300px; /* Adjust height for smaller screens */
+    }
+}
