@@ -1,12 +1,11 @@
-/* General Styles */
 body {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    background: url('cropsbg.png') no-repeat center center fixed; /* Background image */
+    background: url('cropsbg1.png') no-repeat center center fixed; 
     background-size: cover;
-    height: 100vh; /* Ensure it covers the full viewport height */
-    overflow: auto; /* Allow scrolling */
+    height: 100vh; 
+    overflow: auto; 
     position: relative;
 }
 
@@ -16,11 +15,11 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('cropsbg.png'); /* Correct path */
+    background-image: url('cropsbg1.png'); 
     background-size: cover;
     background-position: center;
-    filter: blur(10px); /* Optional blur effect */
-    z-index: -1; /* Ensure it stays behind other content */
+    filter: blur(10px); 
+    z-index: -1; 
 }
 
 body::before {
@@ -31,9 +30,9 @@ body::before {
     right: 0;
     bottom: 0;
     background: inherit;
-    filter: blur(5px); /* Apply blur effect */
-    -webkit-filter: blur(5px); /* For Safari */
-    z-index: -1; /* Ensure it stays behind other content */
+    filter: blur(5px);
+    -webkit-filter: blur(5px); 
+    z-index: -1; 
 }
 
 /* Header */
@@ -41,7 +40,7 @@ header {
     position: absolute;
     top: 15px;
     left: 20px;
-    background: rgba(75, 73, 73, 0.427);
+    background: rgba(141, 141, 141, 0.427);
     padding: 15px;
     display: flex;
     align-items: center;
@@ -96,7 +95,7 @@ header {
 
 /* Query Boxes */
 .query-box {
-    background-color: rgba(94, 94, 94, 0.621);
+    background-color: rgba(196, 195, 195, 0.488);
     border: 3px solid rgb(255, 255, 255);
     border-radius: 20px;
     padding: 20px;
@@ -200,7 +199,6 @@ font-weight: normal;
     transform: translateX(0);
 } */
 
-/* Chat Button */
 .chat-button {
     background-color: #4CAF50;
     border: none;
@@ -214,8 +212,6 @@ font-weight: normal;
     border-radius: 10px;
     display: block;
 }
-
-/* Filter Buttons */
 .filter-buttons {
     display: flex;
     justify-content: center;
@@ -234,7 +230,7 @@ font-weight: normal;
 }
 
 .filter-buttons button.active-filter {
-    background-color: #4CAF50; /* Example active filter color */
+    background-color: #4CAF50; 
     color: white;
 }
 
@@ -286,60 +282,57 @@ footer img {
 .query-box:nth-child(even) {
     animation: slideInRight 1s ease-in-out forwards;
 }
-
-/* Ensure elements remain visible */
 .query-box, .slide-button {
     display: block;
 }
-/* Media query for responsiveness */
 @media (max-width: 768px) {
     body {
-        padding-top: 120px; /* Ensure space for the fixed header */
+        padding-top: 120px; 
     }
 
     header {
-        flex-direction: row; /* Align header elements in a line */
-        justify-content: center; /* Center the header elements */
-        align-items: center; /* Center the header elements vertically */
+        flex-direction: row; 
+        justify-content: center; 
+        align-items: center; 
     }
 
     .logo-title {
-        flex-direction: row; /* Align logo and title in a line */
-        align-items: center; /* Center the logo and title */
-        margin-right: 0; /* Remove right margin */
+        flex-direction: row; 
+        align-items: center; 
+        margin-right: 0; 
     }
 
     .logo {
-        margin-right: 10px; /* Add right margin for the logo */
-        margin-bottom: 0; /* Remove bottom margin for the logo */
+        margin-right: 10px;
+        margin-bottom: 0; 
     }
 
     .title {
-        font-size: 28px; /* Adjust font size for the title */
+        font-size: 28px; 
     }
 
     .search-container {
-        width: 90%; /* Make the search container wider on small screens */
-        padding: 10px; /* Adjust padding for smaller screens */
-        margin-top: 20px; /* Add margin to avoid overlap */
+        width: 90%; 
+        padding: 10px; 
+        margin-top: 20px; 
     }
 
     .search-bar {
-        width: 100%; /* Make the search bar take full width on small screens */
+        width: 100%; 
     }
 
     .filter-buttons {
-        width: 90%; /* Make the filter buttons container wider on small screens */
-        margin-top: 10px; /* Add margin to avoid overlap */
+        width: 90%; 
+        margin-top: 10px; 
     }
 
     .query-box, .slide-button {
-        width: 90%; /* Make query boxes and slide buttons wider on small screens */
-        margin: 20px auto; /* Center the query boxes and slide buttons */
+        width: 90%; 
+        margin: 20px auto; 
     }
 
     footer {
-        padding: 10px; /* Adjust padding for the footer */
+        padding: 10px; 
     }
 
     footer img {
